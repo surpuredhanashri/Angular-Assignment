@@ -1,0 +1,176 @@
+<body>
+
+
+  <!-- <button (click)="addNewItem()">Add to parent's list</button> -->
+
+
+  <h4>
+    Use multiple classes in ngStyle.
+
+  </h4>
+
+  <div class="container" style="text-align: center;">
+    <button [ngClass]="['btn btn-success', 'button123']" class="ButtonClicked()">ngStyle</button>
+    <button [ngClass]="['btn btn-warning','button12']" class="ButtonClicked()">ngStyle</button>
+  </div>
+
+  <hr>
+
+  <h4>Assign classes based on a condition
+  </h4>
+
+  <div class="container" style="width: 500px; padding: 20px;" [ngClass]="(bCustomer==true)?'customer':'employee'">
+
+    <form method="get">
+      UserId : <input type="text"> <br> <br>
+      Password : <input type="text"> <br> <br>
+
+      <input type="submit" value="Login"> <br> <br>
+    </form>
+
+    <button type="button" (click)="changeToCustomer()">Change To Customer</button>
+    <button type="button" (click)="changeToEmployee()"> Change To Employee</button>
+
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <h4>ngStyle → Modifies the style of the HTML component.
+    </h4>
+    <h4>Adding Multiple style in ngStyle.
+    </h4>
+  
+    <input type="text" [(ngModel)]="strColor"><br> <br>
+    <input type="text" [(ngModel)]="strFontSize"><br> <br>
+    <input type="text" [(ngModel)]="strBackgroundColor"><br> <br>
+    <input type="text" [(ngModel)]="strFontweight"><br> <br>
+    <input type="text" [(ngModel)]="strPaddingLeft"><br> <br>
+  
+  
+    <p
+      [ngStyle]="{'color':strColor,'font-size':strFontSize+'px', 'background-color':strBackgroundColor, 'font-weight':strFontweight, 'padding-left': strPaddingLeft+'px'}">
+      This is ngStyle...</p>
+  </div>
+
+
+  <hr>
+  <div class="container">
+    <h4>Conditions in ngStyle and using multiple styles </h4>
+
+
+  <input type="text" [(ngModel)]="strCustomer"><br>
+  <p [ngStyle]="{'background-color':(strCustomer.toUpperCase()=='YES')?'green':'red',color:'black'}">Are you a customer
+  </p>
+  </div>
+
+  <hr>
+  <div class="container">
+    <h4>ngFor for iterating array of Object or array of strings..
+    </h4>
+  
+    <ul *ngFor="let user of userlist">
+      <li>
+        {{user.uid}}, {{user.uname}}
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+  <h4>Displaying array of objects in a table using ngFor.
+  </h4>
+
+
+  <div class="container">
+    <table class="table table-hover table-borderred">
+      <thead>
+        <th>User ID</th>
+        <th>Name</th>
+        <th>Action</th>
+
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userlist">
+          <td>{{user.uid}}</td>
+          <td>{{user.uname}}</td>
+          <td><input type="button" value="Edit"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+  <hr>
+  <h4>ngIf for conditional rendering.
+  </h4>
+
+  <div class="container">
+    <button type="button" (click)="goodMorning()"> Good Morning</button>
+  <button type="button" (click)="goodEvening()"> Good Evening</button>
+  </div>
+
+  <div class="conatiner">
+    <div *ngIf="bMorning == true">
+      <h2> Good Morning</h2>
+    </div>
+  
+    <div *ngIf="bEvening == true">
+      <h2> Good Evening</h2>
+    </div>
+  
+  </div>
+  <hr>
+<div class="container">
+  <h4>ngSwitch</h4>
+  <input type="text" [(ngModel)]="strData">
+
+  <div [ngSwitch]="strData">
+    <div *ngSwitchCase="1">One</div>
+    <div *ngSwitchCase="2">Two</div>
+    <div *ngSwitchCase="3">Three</div>
+    <div *ngSwitchCase="4">Four</div>
+    <div *ngSwitchCase="5">Five</div>
+    <div *ngSwitchDefault>This is Default...</div>
+
+  </div>
+</div>
+
+  <hr>
+  <h4>Login register
+  </h4>
+
+
+
+  <hr>
+
+
+  <hr>
+
+  <h4>Employee Data</h4>
+
+  <div class="container">
+    <table class="table table-hover table-borderred">
+      <thead>
+        <th>EmpId</th>
+        <th>Name</th>
+        <th>Dept</th>
+        <th>Dept</th>
+
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of employee">
+          <td>{{emp.EmpId}}</td>
+          <td>{{emp.Name}}</td>
+          <td>{{emp.Dept}}</td>
+          <td>{{emp.Dept}}</td>
+          <td><input type="button" value="Edit"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+</body>

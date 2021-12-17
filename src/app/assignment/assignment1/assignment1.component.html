@@ -1,0 +1,140 @@
+<body>
+    <p style="font-weight: bold;">Que 1.</p>
+      <header> <marquee behavior="" direction="">My name is Dhanashri Surpure</marquee> <br></header>
+    <p style="font-weight: bold;">Que 2.</p>
+    <ul>
+     <li> Data given is: {{iNum}}</li> 
+     <li>Name : {{strName}}</li>  
+     <li>User Id: {{userObject.uid}}  </li>
+     <li>Password :{{userObject.pwd}}</li> 
+    </ul>
+       <hr>
+  
+      <p style="font-weight: bold;">Que 3.</p>
+      <h3> Student Details</h3>
+      <table border="1">
+        <tr>
+          <th>Student ID</th>
+          <th>Student Name</th>
+          <th>Student Marks</th>
+        </tr>
+        <tr>
+          <td>{{studentObject.sid}}</td>
+          <td>{{studentObject.sname}}</td>
+          <td>{{studentObject.marks}}</td>
+        </tr>
+      </table>
+      
+      <hr>
+      <p style="font-weight: bold;">Que 4.</p>
+      <h3 id="insure"> Insurance Details</h3>
+        <table border="1" class="tab">
+          <tr>
+            <th> Policy No.</th>
+            <th>Policy Holder Name</th>
+            <th>Amount on Maturity </th>
+            <th>Nominee Name </th>
+           <th>Monthly EMI</th>
+            <th>Duration of the policy </th>
+          </tr>
+          <tr>
+            <td>{{insurObj.policyNo}}</td>
+            <td>{{insurObj.policyHoldersName}}</td>
+            <td>{{insurObj.AmountOnMaturity}}</td>
+            <td>{{insurObj.Nominee}} </td>
+            <td>{{insurObj.EMI}}</td>
+            <td>{{insurObj.Duration}}</td>
+          </tr>
+        </table>
+    
+    <hr>
+    <p style="font-weight: bold;">Que 5.</p>
+      <h4>Display Image</h4>
+      <img [src]="imgURL"><br>
+      
+      <hr>
+  
+      <p style="font-weight: bold;">Que 6.</p>
+      <h4>Buttons</h4>
+      <button (click)="enableButton()" class="b1" >Enable Button</button>
+      <button (click)="disableButton()" class="b2">Disable Button</button>
+      <button [disabled]='bDisableButton' class="b3">Simple Button</button><br><hr>
+      <p style="font-weight: bold;">Que 7.</p>
+      <h5 style="text-align: center;">Create a template reference variable for the verification of the email.</h5>
+     <div class="container">
+       <div class="row">
+         <div class="col-4">
+      <div class="form-group">
+        <label >Email address</label>
+        <input #email placeholder="Enter your Email ID:" class="form-control" ></div>
+      </div> 
+      <div class="col-4">
+      <button class="b4" (click)="verifyEmail(email.value)">Verify Email</button> 
+      </div>
+      </div>
+      </div>
+      <!-- <input #email placeholder="Enter your Email ID:">
+      <button (click)="verifyEmail(email.value)">Verify Email</button> <br>   -->
+      <hr>
+      <p style="font-weight: bold;">Que 8.</p>
+  
+     
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+       <div class="form-group">
+         <label>Phone Number</label>
+         <input #phone placeholder="Enter your Phone Number: " class="form-control" ></div>
+       </div> 
+       <div class="col-4">
+       <button class="b4" (click)="verifyPhone(phone.value)">Verify Phone Number</button> 
+       </div>
+       </div>
+       </div>
+      <!-- <input #phone placeholder="Enter your Phone Number: ">
+      <button (click)="verifyPhone(phone.value)">Verify Phone Number</button> <br>   -->
+      <hr>
+      <!-- <h1>Two Way Data Binding</h1> -->
+      <!-- Connect the variable between ts and html using ngModel in app.component.html -->
+      <p style="font-weight: bold;">Que 9.</p>
+      <h5 style="text-align: center;">Perform two way data binding using name as the variable.</h5>
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+      
+
+
+       </div> 
+       
+       </div>
+       </div>
+    <hr>
+  <p style="font-weight: bold;">Que 10.</p>
+       <h5 style="text-align: center;">Login Form</h5>
+       <div class="container">
+        <div class="row">
+          <div class="col-4">
+       <div class="form-group">
+         <label>User Id:</label>
+         <input #userid placeholder="Enter User ID here: " class="form-control" >
+        </div>
+      
+  
+       <div class="form-group">
+        <label>Password</label>
+        <input #pass placeholder="Enter the password: " class="form-control" >
+      </div>
+    
+      
+       <div class="col-4">
+       <button (click)="login(userid.value,pass.value)" class="b5">Login</button> 
+       </div>
+       </div>
+      </div>
+      </div>
+      <!-- <input #userid placeholder="Enter User ID here: "><br>
+      <input #pass placeholder="Enter the password: "><br>
+      <button (click)="login(userid.value,pass.value)">Login</button> -->
+      <hr> 
+  
+     

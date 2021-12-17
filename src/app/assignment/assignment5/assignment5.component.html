@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Json Server Data</h1>
+    <table class="table table-hover mt-4">
+        <thead class="thread-dark">
+            <tr>
+                <th *ngFor="let header of columns">{{header}}</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let users of arrUsers">
+            <td>{{users.id}}</td>
+            <td>{{users.firstName}}</td>
+            <td>{{users.lastName}}</td>
+            <td>{{users.email}}</td>
+            <td>{{users.location}}</td>
+        </tbody>
+    </table>
+    <br>
+
+    <button (click)="insertRecord()">Insert Record</button>
+
+    <input type="text" [(ngModel)]="recordNum">
+    <button (click)="deleteRecord()">Delete Record</button>
+</div>/

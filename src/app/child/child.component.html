@@ -1,0 +1,7 @@
+
+<p> Data Sent from the parent is : {{strNameParentToChild}}</p>
+<p>Data Sent from the parent to child user id is : {{ParenttoChild.uuid}}</p>
+<p>Data Sent from the parent to child user password is : {{ParenttoChild.passwd}}</p>
+
+
+<input type="text" [(ngModel)]="strData" (keyup)="sendMessageToParent()"/>

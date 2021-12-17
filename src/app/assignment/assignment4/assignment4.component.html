@@ -1,0 +1,94 @@
+<body>
+  
+  <div class="container mb-5" style="margin-left: 90px;">
+    <button class="btn btn-success" (click)='ActiveAdd()' style="margin-left: 90px; background-color: palegreen; color: black;">Add</button>
+    <button class="btn btn-success" (click)='ActiveSearch()' style="margin-left: 90px; background-color: palegreen; color: black;" >Search</button>
+    <button class="btn btn-success" (click)='GetAllData()' style="margin-left: 90px; background-color: palegreen; color: black;">All Data</button>
+  </div>
+  
+  <hr>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h5 class="card-title">Q1-Q4</h5>
+        <div *ngIf="AddTab">
+          <input type="text" class="form-control" [(ngModel)]='id' placeholder="id" style="margin-left: 90px; width: 300px;" > <br>
+          <input type="text" class="form-control" [(ngModel)]='name' placeholder="Name" style="margin-left: 90px; width: 300px;" > <br>
+          <input type="text" class="form-control" [(ngModel)]='amount' placeholder="Amount" style="margin-left: 90px; width: 300px;" > <br>
+          <button class="btn btn-success" (click)='AddProduct()' style="margin-left: 90px; background-color: blue;">Add</button>
+        </div>
+  
+        <div *ngIf="Searchtab">
+          <div class="mb-5">
+            <button class="btn btn-success" (click)='ActiveSearchID()' style="margin-left: 90px; background-color: lightcoral; color: black;">Search Id</button>
+            <button class="btn btn-success" (click)='ActiveSearchName()' style="margin-left: 180px; background-color: lightcoral; color: black;">Search Name</button>
+          </div>
+          <input type="text" class="form-control" [(ngModel)]='id' [disabled]='ActiveId' placeholder="Id" style="margin-left: 90px; width: 300px;" > <br>
+          <input type="text" class="form-control" [(ngModel)]='name' [disabled]='ActiveName' placeholder="Name"style="margin-left: 90px; width: 300px;" > <br>
+          <button class="btn btn-success" (click)='ActiveName?GetProductById():GetProductByName()' style="margin-left: 90px; background-color: blue;">Search</button>
+        </div>
+  
+        <table ngClass='table table-bodered table-hover'>
+          <thead>
+            <th>ProductId</th>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Action</th>
+          </thead>
+          <tbody>
+  
+            <tr *ngFor="let user of GetData">
+              <th scope="row">{{user.id}}</th>
+              <td>{{user.name}}</td>
+              <td>{{user.amount}}</td>
+              <td><button class="btn btn-danger" (click)='DeleteProduct(user.id)'>Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- <div class="col-4">
+            <div class="card card-1">
+                <div class="card-body">
+                  <h5 class="card-title">Q2</h5>
+                  
+                </div>
+              </div>
+        </div> -->
+  
+    </div>
+  
+  
+    <div class="row" style="margin-top: 30px;">
+      <div class="col">
+        <div class="card card-1">
+          <div class="card-body">
+            <h5 class="card-title">Q5</h5>
+            <h2>Child</h2>
+            <app-child1 (childData)='GetchildData($event)' (childData_obj)='Getchildobj($event)'
+              (childData_obj_arr)='Getchildobjarr($event)'></app-child1>
+            <h2>Parent</h2>
+            <h3>{{childtoparentdata}}</h3>
+            <h3>{{choldobject | json}}</h3>
+            <table ngClass='table table-bodered table-hover'>
+              <thead>
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Amount</th>
+  
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of choldobject_arr">
+                  <td>{{user.product_id}}</td>
+                  <td>{{user.product_name}}</td>
+                  <td>{{user.cost}}</td>
+  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

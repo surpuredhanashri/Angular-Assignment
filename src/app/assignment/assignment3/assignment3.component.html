@@ -1,0 +1,251 @@
+<body>
+  <h2 style="text-align: center">Pipes</h2>
+
+  <br />
+
+  <h4>Uppercase and Lowercase Pipe</h4>
+  <div class="container">
+      
+    <input type="text" [(ngModel)]="strDataToConvert" />
+
+    original string {{ strDataToConvert }} <br />
+    given string in upper case : {{ strDataToConvert | uppercase }} <br />
+    given string in upper case : {{ strDataToConvert | lowercase }} <br />
+  </div>
+
+  <hr />
+
+  <h4>Currency Pipe</h4>
+  <div class="container">
+    <input type="text" [(ngModel)]="iCurrencyDate" /> <br />
+
+    Amount in USD : {{ iCurrencyDate | currency: " USD" }} <br />
+    Amount in INR : {{ iCurrencyDate | currency: "RS." }} <br />
+    Amount in EUR : {{ iCurrencyDate | currency: "JPY" }} <br />
+    Amount in RUB : {{ iCurrencyDate | currency: "RUB" }} <br />
+  </div>
+
+  <hr />
+
+  <h4>Date Pipe:</h4>
+  <div class="container">
+    Todays date in Mills : {{ todayDateMills }} <br />
+    Today date in Mills piped to Date pipe : {{ todayDateMills | date }} <br />
+    <br />
+
+    Today date in date obj : {{ todayDateInDateObj }} <br />
+    Today date in date obj with Date pipe : {{ todayDateInDateObj | date }}
+    <br />
+    <br />
+
+    Todays date in string format : {{ todayDateInStringFormat }} <br />
+    Date i string format with date pipe : {{ todayDateInStringFormat | date }}
+    <br />
+    <br />
+
+    <br />
+    <br />
+
+    <span style="font-weight: bold"> Short: </span>
+    {{ todayDateInDateObj | date: "short" }} <br />
+
+    <span style="font-weight: bold"> Medium date : </span>
+    {{ todayDateInDateObj | date: "long" }} <br />
+
+    <span style="font-weight: bold"> Long date : </span> 
+    {{ todayDateInDateObj | date: "medium" }} <br>
+
+    <span style="font-weight: bold"> Medium date : </span> 
+    {{ todayDateInDateObj | date: "mediumDate" }} <br>
+
+    <span style="font-weight: bold"> Full date : </span>
+    {{ todayDateInDateObj | date: "fullDate" }} <br>
+
+    <span style="font-weight: bold"> Short date : </span>
+    {{ todayDateInDateObj | date: "shortDate" }} <br>
+
+    <span style="font-weight: bold"> Short Time : </span>
+    {{ todayDateInDateObj | date: "shortTime" }} <br>
+
+    <span style="font-weight: bold"> Medium Time : </span>
+    {{ todayDateInDateObj | date: "mediumTime" }} <br>
+
+    <span style="font-weight: bold"> Long Time : </span>
+    {{ todayDateInDateObj | date: "longTime" }} <br>
+
+    <span style="font-weight: bold"> Full Time : </span>
+    {{ todayDateInDateObj | date: "fullTime" }} <br>
+  </div>
+
+
+
+  <hr />
+
+  <h4>JSON Pipe</h4>
+
+  <div class="container">
+    Json Object : {{ JsonUserObj }} <br />
+    Json Object with json pipe : {{ JsonUserObj | json }} <br />
+    <br />
+
+    Json Array of Objects {{ JsonStudentObjs }} <br />
+    Json Array of Objects with json pipe {{ JsonStudentObjs | json }} <br />
+  </div>
+
+  <hr />
+
+  <h4>Decimal Pipe</h4>
+
+  <div class="container">
+    Original Data : {{ iDataForDecimalPipe }} <br />
+    Using Decimal Pipe '1.0-1' : {{ iDataForDecimalPipe | number: "4.0-4" }}
+    <br />
+    Using Decimal Pipe '1.0-3' : {{ iDataForDecimalPipe | number: "1.0-3" }}
+    <br />
+    Using Decimal Pipe show only integer part '0.0-0' : {{ iDataForDecimalPipe | number: "0.0-0" }}
+    <br>
+  </div>
+
+  <hr />
+  <h4>Percent Pipe:</h4>
+  <div class="container">
+    <h6>Original Data : {{ iDataForPercentPipe }}</h6>
+    <h6>Data with Percent pipe : {{ iDataForPercentPipe | percent }}</h6>
+    <h6>
+      Data with Percent pipe with decimal digits (1.2-5):
+      {{ iDataForDecimalPipe | percent: "1.2-5" }}
+    </h6>
+  </div>
+  <hr />
+
+  <h4>Slice Pipe</h4>
+  <div class="container">
+    Original Data : {{ iDataForSlicePipe }} <br />
+    Slicing from 2nd position upto 5th posotion :
+    {{ iDataForSlicePipe | slice: 2:5 }} <br />
+
+    Slicing from 2nd position from last 2 Character :
+    {{ iDataForSlicePipe | slice: 2:-3 }} <br />
+    Leaving First 4 Character, rest are displayed :
+    {{ iDataForSlicePipe | slice: 4 }} <br />
+    <h6>-5 is 5 character from last : {{iDataForSlicePipe | slice : -5}}</h6>
+  </div>
+<hr>
+
+<h4>Slice Practice </h4>
+<div class="container">
+  <h4>Q12  Create three edit boxes.  First edit box when take the string from the user.  Second and third edit boxes will take starting and ending number for slice</h4>
+  <input type="text" [(ngModel)]='strslice'><br>
+  <input type="text" [(ngModel)]='strslice1'><br>
+  <input type="text" [(ngModel)]='strslice2'><br>
+  <!-- <div *ngIf="strslice1!=0"> 
+    Your Required String when 
+    
+ </div> -->
+
+  orignalname:{{strslice}}<br>
+  orignalnamewith slice:{{strslice|slice:strslice1:strslice2}}<br><br>
+
+</div>
+  <hr>
+
+  <h4> Q.13</h4>
+<div class="container">
+  <h4>Q13 Modify the above program as if the second input is zero then second input should not be considered.  
+    If the second input is 0 then the command should be</h4>
+
+    <input type="text" [(ngModel)]='StrModify'><br>
+  <input type="text" [(ngModel)]='StrModify1'><br>
+  <input type="text" [(ngModel)]='StrModify2'><br>
+
+  <div *ngIf='StrModify2==0'>
+    <h6>zero slice.... {{StrModify}}</h6>
+  </div>
+
+  orignalname:{{StrModify}}<br>
+  orignalnamewith slice:{{StrModify|slice:StrModify1:StrModify2}}<br><br>
+</div>
+
+
+  <hr />
+
+  <h4>Qu.14</h4>
+
+  <div class="container">
+    <input type="text" [(ngModel)]='istrCapitalize'>
+    <h6>Given Data:{{istrCapitalize}}</h6>
+    <h6>capitalize :{{istrCapitalize | stringConverter : 'lowercase'}}</h6>
+    <br>
+
+    <input type="text" [(ngModel)]='istrCapitalize'>
+    <h6>Given Data:{{istrCapitalize}}</h6>
+    <h6>lowercase :{{istrCapitalize | stringConverter : 'capitalize'}}</h6>
+    <br>
+  </div>
+
+  <hr>
+
+  <h4>Creating a custom pipe:</h4>
+  <div class="container">
+
+    <ol>
+      <li>Generate a pipe using ng g pipe tempConverter.</li>
+      <li>Verify that app.module.ts is update about the pipe in declaration section in @NgModule.</li>
+      <li>Write the pipe logic in transform() of temp-Converter.pipe.ts
+      </li>
+      <li>Define the required variables in app.component.ts
+      </li>
+      <li>Use the tempConverter Pipe in app.component.html.
+      </li>
+      <br>
+      <input type="text" [(ngModel)]='iFarent'>
+      <h6>Given Data:{{iFarent}}</h6>
+      <h6>Farenheit to celcuis :{{iFarent | tempConverter : 'ToCelcius' | number : '1.0-2'}}</h6>
+      <br>
+      <input type="text" [(ngModel)]='iCelcius'>
+      <h6>Given Data:{{iCelcius}}</h6>
+      <h6>Farenheit to celcuis :{{iCelcius | tempConverter : 'ToFaren' | number : '1.0-2'}}</h6>
+      <br>
+    </ol>
+  </div>
+
+
+  <hr>
+<div class="container">
+   
+  <h4>Pure Pipe </h4>
+  {{iNumber1 | purePipe}}
+  {{iNumber2 | purePipe}}
+
+  <h4>Impure Pipe</h4>
+  {{iNumber1 | impurePipe}}
+  {{iNumber2 | impurePipe}}
+</div>
+  <hr>
+
+  <div class="container">
+    <div class="container">
+      <h1>User Details</h1>
+      <span>Search</span>&nbsp;
+      <input type="text" [(ngModel)]="nameString"><br><br>
+      <table class="table table-sm table-striped m-t-4">
+          <thead class="thead-dark">
+              <tr>
+                  <th>First Name</th>
+                  <th>Age</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let user of users | filter: nameString">
+                  <td>{{user.firstName}}</td>
+                  <td>{{user.Age}}</td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+    
+    <button type="button" class="btn btn-success m-3" (click)="addUser()">Add User</button>&nbsp;&nbsp;
+    <button type="button" class="btn btn-success" (click)="reset()">Reset</button>
+  </div>
+
+</body>

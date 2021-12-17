@@ -1,0 +1,82 @@
+<body>
+  
+    <h1>CRUD Operation</h1>
+  
+   <div [ngClass]="['container']">
+  
+     <div [ngClass]="['offset-lg-2 col-lg-8', 'mainCard']"  > 
+      <h1 [ngStyle]="{'text-align':'center'}">New Employee Form</h1>
+      <form [formGroup]="addEmp" (ngSubmit)="collectEmp()">
+  
+        <div class="form-group">
+          <label for="exampleInputEmail1"> Policy Holders Name</label>
+          <input type="text" class="form-control" formControlName="Policy_Holders_Name" placeholder="Enter Policy Holders Name">
+    
+        </div>
+    
+        <div class="form-group">
+          <label for="exampleInputEmail1">Policy Amount</label>
+          <input type="text" class="form-control" formControlName="Policy_Amount" placeholder="Enter Policy Amount">
+    
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Amount for EMI</label>
+          <input type="text" class="form-control" formControlName="Amount_for_EMI" placeholder="Enter Amount for EMI">
+    
+        </div>
+    
+        <div class="form-group">
+          <label for="exampleInputEmail1">Nominees name</label>
+          <input type="text" class="form-control" formControlName="Nominees_name" placeholder="Enter Nominees name">
+        </div>
+    
+        <button type="submit" [ngClass]="['submitbtn']">Submit</button>
+      </form>
+     </div>
+
+   </div>
+
+   <hr>
+  
+  
+    <br>
+
+    <div class="container offset-lg-2 col-lg-8">
+      <table class="table table-hover mt-4" >
+        <thead [ngStyle]="{'text-align':'center'}" class="table-dark">
+          <tr >
+            <th *ngFor="let header of columns">{{header}}</th>
+          </tr>
+        </thead>
+        <tbody [ngStyle]="{'text-align':'center'}" *ngFor="let users of arrEmployee">
+          <td >{{users.id}}</td>
+          <td>{{users.Policy_Holders_Name}}</td>
+          <td>{{users.Policy_Amount}}</td>
+          <td>{{users.Amount_for_EMI}}</td>
+          <td>{{users.Nominees_name}}</td>
+          
+          <td>
+            <button (click)="DeleteData(users.id)" type="button" [ngClass]="['trashbtn']">
+              <i class="fas fa-trash"></i>
+            </button>
+          </td>
+          <td>
+            <!-- <button (click)="EditData()" type="button" [ngClass]="['editbtn']">
+              <i class="fas fa-edit"></i>
+            </button> -->
+            
+            <a routerLink="/update/{{users.id}}">
+              <i class="fa fa-edit"  [ngClass]="['editbtn']"></i>
+            </a>
+
+          </td>
+        </tbody>
+      </table>
+    </div>
+  
+  
+         
+
+
+  
+</body>

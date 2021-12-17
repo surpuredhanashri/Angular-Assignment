@@ -1,0 +1,38 @@
+{
+  "user": [
+    {
+      "id": 101,
+      "firstName": "Charan ",
+      "lastName": "Kumar",
+      "email": "Charan@gmail.com",
+      "location": "Banglore"
+    },
+    {
+      "id": 102,
+      "firstName": "Dhanashri",
+      "lastName": "Surpure",
+      "email": "Dhanashri@gmail.com",
+      "location": "Kolhapur"
+    },
+    {
+      "id": 103,
+      "firstName": "Rahul",
+      "lastName": "Bhatiya",
+      "email": "Rahul@gmail.com",
+      "location": "Rajshtan"
+    },
+    {
+      "id": 104,
+      "firstName": "Surbhi",
+      "lastName": "Yadav",
+      "email": "surbhi@gmail.com",
+      "location": "Delhi"
+    },
+    {
+      "first_name": "Sonali",
+      "last_name": "Manchekar",
+      "email": "sonali@gmail.com",
+      "id": 105
+    }
+  ]
+}
